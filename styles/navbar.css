@@ -1,0 +1,116 @@
+/** ---------- Barra de Navegación ---------- */
+.navbar {
+   background-color: #1a1a1a;
+   padding: 1rem;
+   padding-left: 0;
+}
+
+.navbar-collapse {
+   align-items: center;
+   justify-content: space-between;
+}
+
+/** ---------- Efecto linea para links del nav ---------- */
+.nav-link {
+   position: relative;
+   text-decoration: none;
+   color: #fff;
+   transition: color 0.3s ease-in;
+}
+
+.nav-link:hover {
+   color: #ffd700;
+}
+
+.nav-link::after {
+   content: '';
+   position: absolute;
+   width: 0;
+   height: 2px;
+   /* Color de la línea de subrayado */
+   background: #ffd700;
+   left: 0;
+   bottom: 0;
+   /* Transición suave de 0.3s */
+   transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+   /* Al hacer hover, la línea subrayada aparece */
+   width: 100%;
+}
+
+/* Desactivando Focus de BT */
+.nav-link:focus {
+   color: #ffd700;
+}
+
+/** ---------- Icono de la pagina ---------- */
+.container_lc1 {
+   background-color: transparent;
+   margin: 0.5em 1rem;
+}
+
+.lc1 {
+   width: auto;
+   height: 40px;
+   object-fit: contain;
+   aspect-ratio: 16/9;
+}
+
+/** ---------------- Modificando el boton del menu de navegacion ---------------- */
+.navbar-toggler {
+   border-color: #fff;
+   /* Cambia el color del borde del botón a blanco */
+}
+
+.navbar-toggler-icon {
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+   /* Cambia el color del ícono de hamburguesa a blanco (#fff) */
+}
+
+/** ------------ Modificando el boton de buscar ------------ */
+.btn-outline-success {
+   /* Color del texto del botón */
+   --bs-btn-color: #ffffff;
+   /* Blanco puro para el texto */
+   /* Color del borde del botón */
+   --bs-btn-border-color: #ffffff;
+   /* Blanco puro para el borde */
+   /* Color del texto al pasar el mouse */
+   --bs-btn-hover-color: #000000;
+   /* Negro para el texto al hacer hover, creando contraste */
+   /* Color de fondo al pasar el mouse */
+   --bs-btn-hover-bg: #ffffff;
+   /* Blanco como fondo al hacer hover */
+   /* Color del borde al pasar el mouse */
+   --bs-btn-hover-border-color: #ffffff;
+   /* Mantener el borde blanco al hacer hover */
+   /* Sombra al enfocar el botón */
+   --bs-btn-focus-shadow-rgb: 255, 255, 255;
+   /* RGB blanco para la sombra de enfoque */
+   /* Color del texto al activar el botón (al hacer clic) */
+   --bs-btn-active-color: #000000;
+   /* Negro para el texto cuando el botón está activo */
+   /* Color de fondo al activar el botón (al hacer clic) */
+   --bs-btn-active-bg: #ffffff;
+   /* Fondo blanco al activar el botón */
+   /* Color del borde al activar el botón (al hacer clic) */
+   --bs-btn-active-border-color: #ffffff;
+   /* Mantener el borde blanco al activar el botón */
+   /* Sombra interior al activar el botón (al hacer clic) */
+   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+   /* Sombra ligera negra al presionar el botón */
+   /* Color del texto cuando el botón está deshabilitado */
+   --bs-btn-disabled-color: #ffffff;
+   /* Mantener el texto blanco si el botón está deshabilitado */
+   /* Color de fondo cuando el botón está deshabilitado */
+   --bs-btn-disabled-bg: transparent;
+   /* Fondo transparente para el botón deshabilitado */
+   /* Color del borde cuando el botón está deshabilitado */
+   --bs-btn-disabled-border-color: #ffffff;
+   /* Mantener el borde blanco para el botón deshabilitado */
+   /* Desactivar el gradiente */
+   --bs-gradient: none;
+   /* Sin gradiente para un estilo limpio y moderno */
+}

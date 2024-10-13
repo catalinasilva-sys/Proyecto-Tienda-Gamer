@@ -1,0 +1,347 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   scroll-behavior: smooth;
+   /*VUELVE MÁS SUAVE EL DESPLAZAMIENTO DEL SCROLL*/
+}
+
+/** Definiendo variables*/
+:root {
+   --var-font-h1: clamp(4rem, 5vw, 8rem);
+   --var-font-h2: clamp(1.5rem, 4vw, 3rem);
+   --var-font-p: clamp(0.9rem, 2vw, 1rem);
+   --var-bc-trans: transparent;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   height: auto;
+   box-sizing: border-box;
+   background: linear-gradient(180deg, #1b2a49 0%, #48266a 40%, #4895ef 100%);
+   overflow-x: hidden;
+   /* Previene el scroll horizontal */
+}
+
+/** Seccion principal de consolas*/
+
+.consolas_preview {
+   background-color: var(--var-bc-trans);
+   color: #fff;
+   min-height: 100dvh;
+   display: flex;
+   justify-content: start;
+   flex-direction: column;
+   text-align: center;
+   container-name: consolas;
+   container-type: inline-size;
+}
+
+h1 {
+   font-size: var(--var-font-h1);
+   padding: 0.5em 0;
+   margin: 0;
+   text-transform: uppercase;
+   color: #00bfff;
+   text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff, 0 0 15px #00bfff,
+      0 0 20px #00bfff, 0 0 30px #00bfff;
+   animation: neon-glow-fast 5s infinite;
+}
+
+.gallery_consols {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+   grid-auto-rows: 250px;
+   /* margin: auto; */
+   margin-top: 1rem;
+   width: 100%;
+   gap: 16px;
+   padding: 12px;
+   min-height: auto;
+}
+
+.container_imgs {
+   border-radius: 8px;
+   overflow: hidden;
+   /* Asegura que el contenido no se salga del contenedor */
+}
+
+.container_imgs a img {
+   width: 100%;
+   /* Ajusta el ancho al tamaño del contenedor */
+   height: 100%;
+   /* Ajusta la altura al tamaño del contenedor */
+   object-fit: contain;
+   /* Mantiene la proporción y rellena el espacio */
+}
+
+.container_imgs a .imgs_consolas {
+   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
+   transition: box-shadow 0.3s ease-in-out, transform 0.3s;
+}
+
+.container_imgs a .imgs_consolas:hover {
+   box-shadow: inset 0 0 30px rgba(0, 0, 0, 1);
+}
+
+/**Secciones de consolas individuales*/
+/*Div contedor*/
+.wraper {
+   gap: 2rem;
+   padding: 1rem 2rem;
+   min-height: auto;
+}
+
+/*Section por consolas*/
+.wraper section {
+   padding: 1rem 0;
+}
+
+/*Articles*/
+.wraper section .article_C {
+   display: flex;
+   align-items: flex-start;
+   /* Asegura que el contenido se alinee con la parte superior de la imagen */
+   gap: 1rem;
+   justify-content: center;
+}
+
+/*Contenedor de imagenes*/
+.container_img-article {
+   overflow: hidden;
+   /* Asegura que el contenido no se salga del contenedor */
+}
+
+.container_img-article img {
+   width: 100%;
+   /* Ajusta el ancho al tamaño del contenedor */
+   height: 100%;
+   /* Ajusta la altura al tamaño del contenedor */
+   object-fit: contain;
+   /* Mantiene la proporción y rellena el espacio */
+}
+
+.promocion {
+   margin-top: 2.5rem;
+   width: 100%;
+   height: 100px;
+   /* Ajusta la altura del contenedor */
+   overflow: hidden;
+   background-color: #ffffff;
+   /* Fondo del div */
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   position: relative;
+   padding: 0 20px;
+   /* Espacio lateral para el texto */
+}
+
+.promocion h2 {
+   font-size: 2.5rem;
+   font-family: 'Bungee', sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   color: #2a496f;
+   position: absolute;
+   white-space: nowrap;
+   animation: movimiento 8s linear infinite;
+}
+
+/** ----------- Tarjetas de información ----------*/
+/* Contenedor de la seccion de informacion de productos*/
+.info_products {
+   padding: 1rem 2rem;
+   width: clamp(300px, 50%, 600px);
+   background: linear-gradient(180deg, #2a496f, #c5ced927);
+   /* Gradiente de tonos azules */
+   border-radius: 4px;
+}
+
+.info_products .section_ofertas article {
+   padding: 0 0.5rem 1rem 0.5rem;
+}
+
+.info_products .section_ofertas article h2 {
+   font-size: var(--var-font-h2);
+   color: #f2f2f2;
+   text-wrap: pretty;
+}
+
+/* Contenedor informacion de descuento*/
+.info_desc {
+   max-width: fit-content;
+   margin-top: 1em;
+   margin-bottom: 0.5em;
+}
+
+/* Informacion basica de la oferta*/
+.info_desc .cant_desc > p {
+   font-size: var(--var-font-p);
+   margin-bottom: 0;
+   color: #f9e5ac;
+   background-color: rgba(255, 255, 255, 0.1);
+   /* Fondo ligeramente transparente */
+   padding: 5px;
+   border-radius: 5px;
+   text-align: center;
+}
+
+/*Contenedor flexible para el precio actual y el porcentaje de descuento*/
+.cant_desc div {
+   display: flex;
+   align-items: center;
+   margin-top: 0.2em;
+}
+
+/*Precio Actual*/
+.cant_desc div p {
+   margin-bottom: 0;
+   font-size: 0.8rem;
+   color: #d1d1d1;
+   padding: 5px 10px;
+}
+
+/*Modificando el span del porcentaje de descuento*/
+.cant_desc div span {
+   font-size: 0.9rem;
+   margin-left: 0rem;
+   background-color: #f00;
+   color: #fff;
+   padding: 2px;
+   border-radius: 5px;
+}
+
+/*Precio Normal*/
+.cant_desc div p {
+   text-decoration: line-through;
+   color: #f9e5ac88;
+   font-size: 0.9rem;
+}
+
+/* Validez de la oferta */
+.info_desc ~ p {
+   font-size: 1rem;
+   margin-bottom: 0rem;
+   color: #f2e7e7;
+}
+
+/**SECCION MAS INFORMACIÓN*/
+/* Estilos para el elemento details */
+details {
+   background-color: #fff;
+   border-radius: 8px;
+   border: 1px solid #ddd;
+   margin-bottom: 20px;
+   padding: 10px 15px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el summary */
+summary {
+   font-weight: bold;
+   font-size: 1em;
+   cursor: pointer;
+   color: #1b2a49;
+   padding: 5px;
+}
+
+summary:hover {
+   color: #4a69bd;
+}
+
+/* Estilos para las listas */
+ul {
+   list-style-type: none;
+   padding-left: 20px;
+}
+
+.mas_info details ul li {
+   margin-bottom: 10px;
+   font-size: 0.8rem;
+   line-height: 1.5;
+}
+
+/* Efecto para detalles al abrir */
+details[open] {
+   border-color: #1b2a49;
+}
+
+/*? ----------- CONTAINER QUERIES ------------*/
+/**---------------Productos_mas------------------*/
+@container consolas (min-width: 880px) {
+   .gallery_consols {
+      grid-template-columns: repeat(auto-fit, minmax(383px, 1fr));
+   }
+
+   .container_imgs a img {
+      filter: brightness(0.8) saturate(0.8);
+      transition: filter 0.3s ease-in-out;
+   }
+
+   .container_imgs a img:hover {
+      filter: brightness(1) saturate(1.4);
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 1);
+      transform: scale(1.05);
+   }
+}
+
+@container consolas (width>=1000px) {
+   .gallery_consols {
+      grid-template-columns: repeat(4, 1fr);
+   }
+}
+
+/*ANIMACION TEXTO ESTAMOS EN PROMOCION*/
+
+@keyframes movimiento {
+   0% {
+      left: 100%; /* Comienza fuera de la pantalla a la derecha */
+   }
+   50% {
+      left: 50%; /* Llega al centro de la pantalla */
+   }
+   70% {
+      left: 40%; /* Pausa en el centro por un 10% del tiempo total */
+   }
+   80% {
+      left: 35%; /* Pausa en el centro por un 10% del tiempo total */
+   }
+   90% {
+      left: 20%; /* Termina fuera de la pantalla a la izquierda */
+   }
+   95% {
+      left: 10%; /* Termina fuera de la pantalla a la izquierda */
+   }
+   95% {
+      left: 5%; /* Termina fuera de la pantalla a la izquierda */
+   }
+   100% {
+      left: -50%; /* Termina fuera de la pantalla a la izquierda */
+   }
+}
+
+/* Animación de parpadeo */
+@keyframes neon-glow-fast {
+   0% {
+      opacity: 1;
+      text-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #00bfff,
+         0 0 50px #00bfff;
+   }
+
+   15% {
+      opacity: 0.8;
+      text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+   }
+
+   30% {
+      opacity: 0.5;
+      text-shadow: 0 0 10px #00bfff, 0 0 10px #00bfff;
+   }
+
+   100% {
+      opacity: 1;
+      text-shadow: 0 0 30px #00bfff, 0 0 40px #00bfff, 0 0 50px #00bfff;
+   }
+}

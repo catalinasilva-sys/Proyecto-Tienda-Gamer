@@ -1,0 +1,233 @@
+.footer {
+   color: #f9ebff;
+   background-color: var(--var-bc-trans);
+   height: auto;
+   padding: 2rem 3rem;
+   display: flex;
+   gap: 5rem;
+   align-items: flex-start;
+   justify-content: space-between;
+   width: 100%;
+}
+
+.titulos {
+   display: grid;
+   width: 100%;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-areas: 'EV redes contact';
+   align-items: center;
+   justify-items: start;
+}
+
+.contenedor_logo_contacto {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+}
+
+.contenedor_logo_contacto svg {
+   width: 30px;
+}
+
+.contenedor_logo_contacto h3 {
+   font-size: 2rem;
+   margin-bottom: 0;
+   margin-bottom: 0.5rem;
+}
+/**--------------------------*/
+.contenedor_general {
+   display: flex;
+   flex-direction: column;
+   flex: 0 0 50%;
+   justify-content: space-between;
+   align-items: flex-start;
+}
+
+.nosotros {
+   a {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-decoration: none;
+      width: fit-content;
+
+      span {
+         font-size: xx-large;
+         color: white;
+         font-weight: bold;
+      }
+
+      .logo {
+         width: fit-content;
+
+         img {
+            height: 6rem;
+            aspect-ratio: 4/3;
+            object-fit: contain;
+         }
+      }
+   }
+
+   p {
+      margin-block: 2rem;
+      font-size: large;
+   }
+}
+
+.redes {
+   height: auto;
+   display: flex;
+   gap: 0.5rem;
+   flex-direction: column;
+}
+
+.iconos_redes {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+
+   span {
+      padding: 0.5rem;
+      border-radius: 0.8rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+         background: white;
+         opacity: 0.6;
+
+         svg {
+            fill: #48266a;
+         }
+      }
+
+      svg {
+         width: 1.8rem;
+         aspect-ratio: 1;
+         transition: all 0.3s ease;
+      }
+   }
+}
+
+/** ---------- FORMULARIO DE CONTACTO ----------*/
+.contact {
+   padding: 0.5rem;
+   flex: 0 0 40%;
+
+   form {
+      width: auto;
+      border-radius: 8px;
+      font-size: var(--var-font-p);
+
+      label span {
+         font-size: medium;
+      }
+   }
+
+   input,
+   textarea,
+   button {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.5rem 1rem;
+      border: 1px solid #000f;
+      background-color: transparent;
+      border-radius: 0.5rem;
+      color: white;
+      outline: none;
+      border: 1px solid #c7c7c7;
+      transition: border-radius 0.3s ease;
+   }
+
+   button:hover {
+      background: white;
+      color: #48266a;
+      border-radius: 4px;
+      box-shadow: 0px 0px 5px 0 #48266a88;
+      border-radius: 1rem;
+   }
+
+   textarea {
+      min-width: 100%; /*DEFINIMOS EL ANCHO MINIMO QUE TENDRA EL TEXTAREA*/
+      resize: none;
+      font-family: sans-serif; /*SE DEBE COLOCAR LA TIPOGRAFIA YA QUE TRAE UNA POR DEFECTO*/
+   }
+
+   label {
+      font-size: 0.88em;
+      line-height: 2;
+      width: 100%;
+   }
+}
+
+.form_input {
+   margin-block: 0.5rem;
+
+   input {
+      padding: 0.5rem 1rem;
+   }
+
+   input::placeholder,
+   textarea::placeholder {
+      color: white;
+      opacity: 0.5;
+   }
+}
+
+/**-------------------------------------------------------------------*/
+@media (width < 768px) {
+   .container_lc1 {
+      display: none;
+   }
+
+   .nav-link:hover::after {
+      /* Al hacer hover, la línea subrayada aparece */
+      width: 22%;
+   }
+
+   .navbar-nav {
+      margin-top: 16px;
+      margin-bottom: 16px;
+   }
+
+   .titulos {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: 'redes contact';
+      align-items: center;
+      justify-items: center;
+   }
+}
+/**-------------------------------------------------------------------*/
+@media (width < 608px) {
+   .grid-item-2 h3 {
+      font-size: clamp(1rem, 2rem - 1vw, 2rem);
+   }
+
+   .contenedor_logo_contacto h3 {
+      font-size: clamp(1rem, 2rem - 1vw, 2rem);
+   }
+}
+
+@media (width < 518px) {
+   .grid-item-2 h3 {
+      font-size: clamp(1rem, 1vw, 1.2rem);
+   }
+
+   .contenedor_logo_contacto h3 {
+      font-size: clamp(1rem, 1vw, 1.2rem);
+   }
+
+   .contenedor_logo_contacto svg {
+      width: 18px;
+   }
+
+   .icons_redes {
+      gap: 2.5rem;
+   }
+   .icons_redes svg {
+      width: 20px;
+   }
+}
