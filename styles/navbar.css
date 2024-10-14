@@ -1,6 +1,6 @@
 /** ---------- Barra de Navegación ---------- */
 .navbar {
-   background-color: #1a1a1a;
+   background-color: #171717;
    padding: 1rem;
    padding-left: 0;
 }
@@ -70,47 +70,174 @@
 }
 
 /** ------------ Modificando el boton de buscar ------------ */
-.btn-outline-success {
-   /* Color del texto del botón */
-   --bs-btn-color: #ffffff;
-   /* Blanco puro para el texto */
-   /* Color del borde del botón */
-   --bs-btn-border-color: #ffffff;
-   /* Blanco puro para el borde */
-   /* Color del texto al pasar el mouse */
-   --bs-btn-hover-color: #000000;
-   /* Negro para el texto al hacer hover, creando contraste */
-   /* Color de fondo al pasar el mouse */
-   --bs-btn-hover-bg: #ffffff;
-   /* Blanco como fondo al hacer hover */
-   /* Color del borde al pasar el mouse */
-   --bs-btn-hover-border-color: #ffffff;
-   /* Mantener el borde blanco al hacer hover */
-   /* Sombra al enfocar el botón */
-   --bs-btn-focus-shadow-rgb: 255, 255, 255;
-   /* RGB blanco para la sombra de enfoque */
-   /* Color del texto al activar el botón (al hacer clic) */
-   --bs-btn-active-color: #000000;
-   /* Negro para el texto cuando el botón está activo */
-   /* Color de fondo al activar el botón (al hacer clic) */
-   --bs-btn-active-bg: #ffffff;
-   /* Fondo blanco al activar el botón */
-   /* Color del borde al activar el botón (al hacer clic) */
-   --bs-btn-active-border-color: #ffffff;
-   /* Mantener el borde blanco al activar el botón */
-   /* Sombra interior al activar el botón (al hacer clic) */
-   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-   /* Sombra ligera negra al presionar el botón */
-   /* Color del texto cuando el botón está deshabilitado */
-   --bs-btn-disabled-color: #ffffff;
-   /* Mantener el texto blanco si el botón está deshabilitado */
-   /* Color de fondo cuando el botón está deshabilitado */
-   --bs-btn-disabled-bg: transparent;
-   /* Fondo transparente para el botón deshabilitado */
-   /* Color del borde cuando el botón está deshabilitado */
-   --bs-btn-disabled-border-color: #ffffff;
-   /* Mantener el borde blanco para el botón deshabilitado */
-   /* Desactivar el gradiente */
-   --bs-gradient: none;
-   /* Sin gradiente para un estilo limpio y moderno */
+.nav-btn {
+   margin-inline: 0.5rem;
+   &:hover svg {
+      stroke: black;
+   }
+
+   svg {
+      stroke: #fff;
+      height: 1.5rem;
+   }
+}
+
+.toggle-login-btn {
+   svg {
+      padding: 0.2rem;
+   }
+}
+
+.session-options {
+   display: none;
+   position: relative;
+   margin-inline: 0.5rem;
+
+   svg {
+      stroke: #fff;
+      height: 1.5rem;
+      transition: stroke 0.3s ease;
+   }
+
+   > div {
+      align-items: flex-end;
+      background-color: #262626;
+      border-radius: 1rem;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      font-size: small;
+      gap: 0.5rem;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      transform-origin: top right;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+      width: 10rem;
+      z-index: 10;
+
+      > p {
+         text-transform: capitalize;
+         cursor: default;
+         font-size: medium;
+         border-bottom: 1px solid #3f3f46;
+         margin: 0;
+         padding-bottom: 0.5rem;
+         text-align: end;
+         width: 100%;
+      }
+
+      button {
+         align-items: center;
+         background-color: inherit;
+         border: none;
+         color: white;
+         display: flex;
+         gap: 0.5rem;
+
+         p {
+            margin: 0;
+         }
+
+         &:hover {
+            svg {
+               stroke: #dc2626;
+            }
+         }
+      }
+   }
+
+   &:hover {
+      > span > svg {
+         stroke: #1a1a1a;
+      }
+
+      > div {
+         transform: scale(1);
+         padding: 1rem 1.5rem;
+      }
+   }
+}
+
+/** Login modal **/
+.modal {
+   padding-right: 0 !important;
+}
+
+.modal-header {
+   position: relative;
+
+   h1 {
+      margin-inline: auto;
+   }
+
+   button {
+      margin: 0 !important;
+   }
+
+   .btn-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+   }
+}
+
+.modal-body {
+   padding: 1rem 4rem;
+   form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      label {
+         display: flex;
+         flex-direction: column;
+         gap: 0.5rem;
+
+         input {
+            border-radius: 1rem;
+            border: 1px solid;
+            outline: none;
+            padding: 0.5rem 1rem;
+         }
+      }
+   }
+}
+
+.modal-footer {
+   display: grid;
+   place-content: center;
+   border: none;
+   margin-bottom: 1rem;
+
+   .form-btn {
+      background-color: #581c87;
+      border-radius: 4rem;
+      border: none;
+      color: white;
+      font-size: large;
+      font-weight: 500;
+      margin-inline: auto;
+      outline: none;
+      padding: 0.5rem;
+      transition: opacity 0.3s ease;
+      width: 12rem;
+
+      &:hover {
+         opacity: 0.8;
+      }
+   }
+
+   span button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      color: #1e40af;
+      cursor: pointer;
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
 }
