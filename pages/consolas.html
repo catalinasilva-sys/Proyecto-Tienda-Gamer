@@ -24,12 +24,274 @@
       />
       <link rel="stylesheet" href="../styles/Consolas_styles.css" />
       <link rel="stylesheet" href="../styles/navbar.css" />
-      <link rel="stylesheet" href="../styles/footer.css">
+      <link rel="stylesheet" href="../styles/footer.css" />
    </head>
    <body>
       <header>
-         <!-- place navbar here -->
-         <div id="navbar-container"></div>
+         <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+               <a href="../index.html" class="link_container-lc1">
+                  <img
+                     src="../assets/imgs/icono_claro_1.png"
+                     alt="Logo de la pagina web"
+                     class="lc1"
+                  />
+               </a>
+               <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbar_Toggler"
+                  aria-controls="navbarTogglerDemo01"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+               >
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbar_Toggler">
+                  <ul
+                     class="container_lc1 navbar-nav d-flex justify-content-center aling-items-center flex-column flex-md-row gap-md-4"
+                  >
+                     <li class="nav-item">
+                        <a class="nav-link" href="../pages/consolas.html"
+                           >Consolas</a
+                        >
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="../pages/perifericos.html"
+                           >Periféricos</a
+                        >
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="../pages/portatiles.html"
+                           >Portátiles</a
+                        >
+                     </li>
+                  </ul>
+                  <div>
+                     <button class="btn btn-outline-light nav-btn">
+                        <svg
+                           xmlns="http://www.w3.org/2000/svg"
+                           fill="none"
+                           viewBox="0 0 24 24"
+                           stroke-width="1.5"
+                           stroke="currentColor"
+                           class="size-6"
+                        >
+                           <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                           />
+                        </svg>
+                     </button>
+                     <div class="btn btn-outline-light session-options">
+                        <span>
+                           <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.5"
+                              stroke="currentColor"
+                              class="size-6"
+                           >
+                              <path
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                              />
+                           </svg>
+                        </span>
+                        <div>
+                           <p id="user">Ricardo</p>
+                           <button onclick="logout()">
+                              <p>Cerrar sesión</p>
+                              <svg
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke-width="1.5"
+                                 stroke="currentColor"
+                                 class="size-6"
+                              >
+                                 <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25"
+                                 />
+                              </svg>
+                           </button>
+                        </div>
+                     </div>
+                     <button
+                        class="btn btn-outline-light nav-btn toggle-login-btn"
+                        id="toggle-login-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop"
+                     >
+                        Login
+                        <svg
+                           xmlns="http://www.w3.org/2000/svg"
+                           fill="none"
+                           viewBox="0 0 24 24"
+                           stroke-width="1.5"
+                           stroke="currentColor"
+                           class="size-6"
+                        >
+                           <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                           />
+                        </svg>
+                     </button>
+                     <div
+                        class="modal fade"
+                        id="staticBackdrop"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                     >
+                        <div class="modal-dialog">
+                           <div
+                              id="login-carousel"
+                              class="carousel slide carousel-fade"
+                           >
+                              <div class="carousel-inner">
+                                 <div class="carousel-item active">
+                                    <div class="modal-content">
+                                       <div class="modal-header">
+                                          <h1
+                                             class="modal-title fs-5"
+                                             id="staticBackdropLabel"
+                                          >
+                                             Inicio de sesión
+                                          </h1>
+                                          <button
+                                             type="button"
+                                             class="btn-close"
+                                             id="close-btn"
+                                             data-bs-dismiss="modal"
+                                             aria-label="Close"
+                                          ></button>
+                                       </div>
+                                       <div class="modal-body">
+                                          <form id="login-form">
+                                             <label>
+                                                Email
+                                                <input
+                                                   type="email"
+                                                   name="email"
+                                                   placeholder="example@gmail.com"
+                                                />
+                                             </label>
+                                             <label>
+                                                Contraseña
+                                                <input
+                                                   type="password"
+                                                   name="password"
+                                                   placeholder="Contraseña"
+                                                />
+                                             </label>
+                                          </form>
+                                       </div>
+                                       <div class="modal-footer">
+                                          <button
+                                             class="form-btn"
+                                             form="login-form"
+                                          >
+                                             Iniciar
+                                          </button>
+                                          <span>
+                                             No te has registrado aun?
+                                             <button
+                                                type="button"
+                                                id="signUp-btn"
+                                                data-bs-target="#login-carousel"
+                                                data-bs-slide-to="1"
+                                             >
+                                                Regístrate aquí
+                                             </button>
+                                          </span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="carousel-item">
+                                    <div class="modal-content">
+                                       <div class="modal-header">
+                                          <h1
+                                             class="modal-title fs-5"
+                                             id="staticBackdropLabel"
+                                          >
+                                             Registro de usuario
+                                          </h1>
+                                          <button
+                                             type="button"
+                                             class="btn-close"
+                                             data-bs-dismiss="modal"
+                                             aria-label="Close"
+                                          ></button>
+                                       </div>
+                                       <div class="modal-body">
+                                          <form id="signup-form">
+                                             <label>
+                                                Usuario
+                                                <input
+                                                   type="text"
+                                                   name="user"
+                                                   placeholder="Usuario"
+                                                />
+                                             </label>
+                                             <label>
+                                                Correo electrónico
+                                                <input
+                                                   type="email"
+                                                   name="email"
+                                                   placeholder="example@gmail.com"
+                                                />
+                                             </label>
+                                             <label>
+                                                Contraseña
+                                                <input
+                                                   type="password"
+                                                   name="password"
+                                                   placeholder="Contraseña"
+                                                />
+                                             </label>
+                                          </form>
+                                       </div>
+                                       <div class="modal-footer">
+                                          <button
+                                             type="submit"
+                                             class="form-btn"
+                                             form="signup-form"
+                                          >
+                                             Registrarme
+                                          </button>
+                                          <span>
+                                             Ya tienes una cuenta?
+                                             <button
+                                                id="logIn-btn"
+                                                type="button"
+                                                data-bs-target="#login-carousel"
+                                                data-bs-slide-to="0"
+                                             >
+                                                Inicia sesión
+                                             </button>
+                                          </span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </nav>
       </header>
       <main>
          <section class="consolas_preview">
@@ -713,6 +975,5 @@
       ></script>
       <!--? Archivo JavaScript para cargar la navbar -->
       <script defer src="../Js/navbar.js"></script>
-      
    </body>
 </html>

@@ -1,7 +1,7 @@
 /** ---------- Barra de Navegación ---------- */
 .navbar {
    background-color: #171717;
-   padding: 1rem;
+   padding: .5rem;
    padding-left: 0;
 }
 
@@ -104,6 +104,7 @@
       background-color: #262626;
       border-radius: 1rem;
       color: white;
+      cursor: default;
       display: flex;
       flex-direction: column;
       font-size: small;
@@ -117,15 +118,32 @@
       width: 10rem;
       z-index: 10;
 
-      > p {
-         text-transform: capitalize;
-         cursor: default;
-         font-size: medium;
+      > a {
+         align-items: center;
          border-bottom: 1px solid #3f3f46;
+         color: white;
+         display: flex;
+         font-size: medium;
+         gap: .5rem;
+         justify-content: flex-end;
          margin: 0;
          padding-bottom: 0.5rem;
          text-align: end;
+         text-decoration: none;
+         text-transform: capitalize;
          width: 100%;
+
+         svg {
+            padding: .2rem;
+         }
+
+         &:hover{
+            text-decoration: underline;
+
+            svg {
+               stroke: #facc15;
+            }
+         }
       }
 
       button {

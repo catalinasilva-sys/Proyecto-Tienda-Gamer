@@ -1,7 +1,7 @@
 const closeBtn = document.getElementById('close-btn');
 const loginToggleBtn = document.getElementById('toggle-login-btn');
 const userIcon = document.querySelector('.session-options');
-const userName = document.getElementById('user');
+const userName = document.querySelector('#user > span');
 const loginForm = document.getElementById('login-form');
 
 loginForm.addEventListener('submit', (e) => {
@@ -13,7 +13,6 @@ loginForm.addEventListener('submit', (e) => {
 });
 
 function login(data, notify = true) {
-   console.log(data);
    const users = JSON.parse(window.localStorage.getItem('users') ?? '[]');
 
    const user = users.find(
@@ -42,14 +41,29 @@ function login(data, notify = true) {
    userIcon.style.display = 'inline-block';
    loginToggleBtn.style.display = 'none';
 
+   // addProfileLink();
+
    closeBtn.click();
    loginForm.reset();
 }
 
 function logout() {
-   window.localStorage.removeItem('current_session')
+   // const profileLink = document.getElementById('profile-link')
+   window.localStorage.removeItem('current_session');
 
    userName.innerHTML = '';
    userIcon.style.display = 'none';
    loginToggleBtn.style.display = 'inline-block';
+   // profileLink.remove()
 }
+
+// function addProfileLink() {
+//    const linkList = document.querySelector('.container_lc1');
+
+//    const profileLink = document.createElement('li');
+//    profileLink.classList.add('nav-item');
+//    profileLink.id = 'profile-link'
+//    profileLink.innerHTML = `<a class="nav-link" href="/pages/profile.html">Perfil</a>`;
+
+//    linkList.appendChild(profileLink);
+// }
