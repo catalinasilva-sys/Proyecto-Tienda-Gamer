@@ -170,7 +170,7 @@ body {
 }
 
 /** Seccion Productos mas vendidos */
-.products_mas {
+.products-gallery {
    background-color: var(--var-bc-trans);
    color: #fff;
    min-height: 100dvh;
@@ -190,7 +190,7 @@ body {
    text-transform: uppercase;
 }
 /*---------------contenedor productos------------------*/
-.product_mas_container {
+.products-container {
    display: grid;
    grid-template-columns: repeat(
       auto-fit,
@@ -272,7 +272,7 @@ body {
 }
 
 @container products (min-width: 1260px) {
-   .product_mas_container {
+   .products-container {
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
    }
 
@@ -307,7 +307,7 @@ body {
       min-height: 50dvh;
    }
 
-   .products_mas {
+   .products-gallery {
       min-height: auto;
    }
 }

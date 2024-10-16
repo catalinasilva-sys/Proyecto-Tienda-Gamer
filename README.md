@@ -1,1 +1,3 @@
 # Proyecto-Tienda-Gamer
+
+## Funcionamiento
