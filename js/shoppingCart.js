@@ -45,7 +45,11 @@ function ready() {
 }
 //Eliminamos todos los elementos del carrito y lo ocultamos
 function pagarClicked() {
-   alert('Gracias por la compra');
+   Swal.fire({
+      icon: 'success',
+      title: 'Bien!',
+      text: 'Gracias por la compra',
+   });
    //Elimino todos los elmentos del carrito
    let carritoItems = document.getElementsByClassName('carrito-items')[0];
    while (carritoItems.hasChildNodes()) {
@@ -59,9 +63,8 @@ function agregarAlCarritoClicked(event) {
    let button = event.target;
    let item = button.parentElement;
    let titulo = item.getElementsByClassName('titulo-item')[0].innerText;
-   let precio = item.getElementsByClassName('precio-item')[0].innerText;
+   let precio = item.getElementsByClassName('precio-item')[0].dataset.price;
    let imagenSrc = item.getElementsByClassName('img-item')[0].src;
-   console.log(imagenSrc);
 
    agregarItemAlCarrito(titulo, precio, imagenSrc);
 
@@ -91,28 +94,34 @@ function agregarItemAlCarrito(titulo, precio, imagenSrc) {
    );
    for (var i = 0; i < nombresItemsCarrito.length; i++) {
       if (nombresItemsCarrito[i].innerText == titulo) {
-         alert('El item ya se encuentra en el carrito');
+         Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'El item ya se encuentra en el carrito',
+         });
          return;
       }
    }
 
    var itemCarritoContenido = `
-        <div class="carrito-item">
-            <img src="${imagenSrc}" width="80px" alt="">
-            <div class="carrito-item-detalles">
-                <span class="carrito-item-titulo">${titulo}</span>
-                <div class="selector-cantidad">
-                    <i class="fa-solid fa-minus restar-cantidad"></i>
-                    <input type="text" value="1" class="carrito-item-cantidad" disabled>
-                    <i class="fa-solid fa-plus sumar-cantidad"></i>
-                </div>
-                <span class="carrito-item-precio">${precio}</span>
+      <div class="carrito-item">
+         <img src="${imagenSrc}" width="80px" alt="">
+         <div class="carrito-item-detalles">
+            <span class="carrito-item-titulo">${titulo}</span>
+            <div class="selector-cantidad">
+               <i class="fa-solid fa-minus restar-cantidad"></i>
+               <input type="text" value="1" class="carrito-item-cantidad" disabled>
+               <i class="fa-solid fa-plus sumar-cantidad"></i>
             </div>
-            <button class="btn-eliminar">
-                <i class="fa-solid fa-trash"></i>
-            </button>
-        </div>
-    `;
+            <span class="carrito-item-precio">${
+               '$' + precio.toLocaleString('es') + ',00'
+            }</span>
+         </div>
+         <button class="btn-eliminar">
+            <i class="fa-solid fa-trash"></i>
+         </button>
+      </div>
+   `;
    item.innerHTML = itemCarritoContenido;
    itemsCarrito.append(item);
 
@@ -136,9 +145,6 @@ function agregarItemAlCarrito(titulo, precio, imagenSrc) {
 function sumarCantidad(event) {
    var buttonClicked = event.target;
    var selector = buttonClicked.parentElement;
-   console.log(
-      selector.getElementsByClassName('carrito-item-cantidad')[0].value
-   );
    var cantidadActual = selector.getElementsByClassName(
       'carrito-item-cantidad'
    )[0].value;
@@ -151,9 +157,6 @@ function sumarCantidad(event) {
 function restarCantidad(event) {
    let buttonClicked = event.target;
    let selector = buttonClicked.parentElement;
-   console.log(
-      selector.getElementsByClassName('carrito-item-cantidad')[0].value
-   );
    let cantidadActual = selector.getElementsByClassName(
       'carrito-item-cantidad'
    )[0].value;
@@ -208,7 +211,6 @@ function actualizarTotalCarrito() {
       let cantidadItem = item.getElementsByClassName(
          'carrito-item-cantidad'
       )[0];
-      console.log(precio);
       let cantidad = cantidadItem.value;
       total = total + precio * cantidad;
    }

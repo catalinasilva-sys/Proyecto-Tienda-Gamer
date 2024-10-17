@@ -143,12 +143,14 @@ body {
    display: block;
    font-weight: bold;
    margin-bottom: 10px;
+   width: 15rem;
    text-transform: uppercase;
 }
 
 .carrito .carrito-item .selector-cantidad {
    display: inline-block;
    margin-right: 25px;
+   user-select: none;
 }
 
 .carrito .carrito-item .carrito-item-cantidad {
