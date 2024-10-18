@@ -29,5 +29,30 @@
       <script src="/js/botIntegration.js"></script>
 
       <script src="/js/isLoggedIn.js"></script>
+      
+      <script src="/js/signUp.js"></script>
+      <script src="/js/logIn.js"></script>
+      <script>
+         const user = JSON.parse(
+            window.localStorage.getItem('current_session')
+         );
+
+         const state = window.history.state;
+
+         if (state && state.unauthorized) {
+            Swal.fire({
+               icon: 'info',
+               title: 'Iniciar Sesión',
+               text: 'Debes iniciar sesión para acceder a esta página',
+               confirmButtonText: 'Ir a Iniciar Sesión',
+               showCancelButton: false,
+               allowOutsideClick: false,
+               willClose: () =>
+                  window.history.replaceState(null, '', window.location.href),
+            });
+         }
+
+         if (user) login(user, false);
+      </script>
    </body>
 </html>

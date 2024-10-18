@@ -54,6 +54,7 @@ function logout() {
    userName.innerHTML = '';
    userIcon.style.display = 'none';
    loginToggleBtn.style.display = 'inline-block';
+   window.location.reload()
    // profileLink.remove()
 }
 
